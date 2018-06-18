@@ -43,6 +43,16 @@ class Game {
         return "\(level.rawValue)"
     }
     
+    func getCalculationIndex(currentIndexOfCalcultion: Int) -> String {
+        if currentIndexOfCalcultion != 9 {
+            let number = currentIndexOfCalcultion + 1
+            return "No.\(number)"
+        } else {
+            return "LAST"
+        }
+
+    }
+    
     func getCalculation(index: Int) -> Calculation {
         return calculations[index]
     }

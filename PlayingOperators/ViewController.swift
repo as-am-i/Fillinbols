@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var score = 0
 
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var calculationIndicationLabel: UILabel!
     @IBOutlet weak var fomulaLabel: UILabel!
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var scoreCountLabel: UILabel!
@@ -80,6 +81,7 @@ class ViewController: UIViewController {
         levelLabel.text = game.getLevel()
         fomulaLabel.text = calc.getFormula()
         scoreCountLabel.text = game.getScoreCount()
+        calculationIndicationLabel.text = game.getCalculationIndex(currentIndexOfCalcultion: indexOfCalculation)
     }
     
     func startNewGame() {
