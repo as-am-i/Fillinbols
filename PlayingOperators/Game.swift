@@ -55,4 +55,12 @@ class Game {
         }
     }
     
+    func checkGameFinished() -> Bool {
+        return self.isFinished ? true : false
+    }
+    
+    func setGameFinished() {
+        self.isFinished = true
+    }
+    
 }

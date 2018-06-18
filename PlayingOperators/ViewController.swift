@@ -38,37 +38,41 @@ class ViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func chooseOperator(_ sender: UIButton) {
-        var index : Int
-        
-        switch sender.titleLabel?.text {
-        case "➕":
-            index = Calculation.OperatorType.addition.rawValue
-        case "➖":
-            index = Calculation.OperatorType.substraction.rawValue
-        case "✖️":
-            index = Calculation.OperatorType.multiplication.rawValue
-        case "➗":
-            index = Calculation.OperatorType.division.rawValue
-        default:
-            index = 0
-        }
+        if !game.checkGameFinished() {
+            
+            var index : Int
 
-        calc.checkAnswerIsCorrect(choice: calc.allOperatorTypes[index])
-        game.calculateScore(currentIndexOfCalculation: indexOfCalculation, score: score)
-        
-        if calc.isCorrect {            
-            if indexOfCalculation < 9 {
-                indexOfCalculation += 1
-                calc = game.getCalculation(index: indexOfCalculation)
-
-                startTimer()
-            } else {
-                timer.invalidate()
-                print("Finished 10 calculations")
+            switch sender.titleLabel?.text {
+            case "➕":
+                index = Calculation.OperatorType.addition.rawValue
+            case "➖":
+                index = Calculation.OperatorType.substraction.rawValue
+            case "✖️":
+                index = Calculation.OperatorType.multiplication.rawValue
+            case "➗":
+                index = Calculation.OperatorType.division.rawValue
+            default:
+                index = 0
             }
-        }
+
+            calc.checkAnswerIsCorrect(choice: calc.allOperatorTypes[index])
+            game.calculateScore(currentIndexOfCalculation: indexOfCalculation, score: score)
         
-        updateViewFromModel()
+            if calc.isCorrect {
+                if indexOfCalculation < 9 {
+                    indexOfCalculation += 1
+                    calc = game.getCalculation(index: indexOfCalculation)
+
+                    startTimer()
+                } else {
+                    timer.invalidate()
+                    game.setGameFinished()
+                    print("Finished 10 calculations")
+                }
+            }
+            
+            updateViewFromModel()
+        }
     }
     
     //MARK: Helper methods

@@ -24,12 +24,10 @@ class Calculation {
     private var rhs = 0
     private var result = 0
     
-    private var timeCount = 5
     var isCorrect = false
     
     init() {
         (lhs, rhs, result) = createNewFomula()
-        timeCount = 5
     }
     
 //    func getTimeCount() -> String {
@@ -87,11 +85,11 @@ class Calculation {
         }
     }
     
-    func addScore(game: Game, indexOfCalculation: Int) {
-        if isCorrect {
-            
-        }
-    }
+//    func addScore(game: Game, indexOfCalculation: Int) {
+//        if isCorrect {
+//
+//        }
+//    }
     
     
     
