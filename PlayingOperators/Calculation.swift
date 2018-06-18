@@ -79,9 +79,10 @@ class Calculation {
     
     func checkAnswerIsCorrect(choice: OperatorType) {
         isCorrect = false
-        
-        if result == calculate(operatorType: choice, num1: lhs, num2:rhs) {
-            isCorrect = true
+        if rhs != 0 {
+            if result == calculate(operatorType: choice, num1: lhs, num2:rhs) {
+                isCorrect = true
+            }
         }
     }
     
