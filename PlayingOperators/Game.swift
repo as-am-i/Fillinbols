@@ -47,4 +47,12 @@ class Game {
         return calculations[index]
     }
     
+    func calculateScore(currentIndexOfCalculation: Int, score: Int) {
+        if calculations[currentIndexOfCalculation].isCorrect {
+            scoreCount += score
+        } else {
+            scoreCount -= 1
+        }
+    }
+    
 }

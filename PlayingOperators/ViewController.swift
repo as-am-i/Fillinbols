@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     var timer = Timer()
     var startTime : Double = 0.0
+    var score = 0
 
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var fomulaLabel: UILabel!
@@ -53,19 +54,20 @@ class ViewController: UIViewController {
         }
 
         calc.checkAnswerIsCorrect(choice: calc.allOperatorTypes[index])
+        game.calculateScore(currentIndexOfCalculation: indexOfCalculation, score: score)
         
-        if indexOfCalculation < 9 {
-            if calc.isCorrect {
+        if calc.isCorrect {            
+            if indexOfCalculation < 9 {
                 indexOfCalculation += 1
                 calc = game.getCalculation(index: indexOfCalculation)
-            
-                startTimer()
-            }
-        } else {
-            print("Finished 10 calculations")
-            timer.invalidate()
-        }
 
+                startTimer()
+            } else {
+                timer.invalidate()
+                print("Finished 10 calculations")
+            }
+        }
+        
         updateViewFromModel()
     }
     
@@ -73,6 +75,7 @@ class ViewController: UIViewController {
     private func updateViewFromModel() {
         levelLabel.text = game.getLevel()
         fomulaLabel.text = calc.getFormula()
+        scoreCountLabel.text = game.getScoreCount()
     }
     
     func startNewGame() {
@@ -106,6 +109,7 @@ class ViewController: UIViewController {
         
         if leftTime >= 0 {
             timeCountLabel.text = "Time: \(leftTime)"
+            score = leftTime
         }
     
         if leftTime == 0 {

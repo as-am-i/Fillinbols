@@ -47,7 +47,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79.5" id="0DM-yZ-SrF"/>
-                                    <constraint firstAttribute="width" constant="79.5" id="P4a-yk-8fy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79.5" id="P4a-yk-8fy"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-r0-2jJ">

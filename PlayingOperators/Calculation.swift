@@ -87,7 +87,7 @@ class Calculation {
         }
     }
     
-    func setTimeAndScore(game: Game, indexOfCalculation: Int) {
+    func addScore(game: Game, indexOfCalculation: Int) {
         if isCorrect {
             
         }
