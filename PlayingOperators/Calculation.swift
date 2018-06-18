@@ -32,9 +32,9 @@ class Calculation {
         timeCount = 5
     }
     
-    func getTimeCount() -> String {
-        return "Score: \(timeCount)"
-    }
+//    func getTimeCount() -> String {
+//        return "Time: \(timeCount)"
+//    }
     
     func getFormula() -> String {
         return "\(lhs) ❓ \(rhs) = \(result)"
@@ -71,7 +71,7 @@ class Calculation {
             result = calculate(operatorType: operatorType, num1: n1, num2: n2)
         } else {
             // n1 must be always n1 * product(result)
-            n2 = Int(arc4random_uniform(10))
+            n2 = Int(arc4random_uniform(10)+1) // avoid 0 as diviser
             result = Int(arc4random_uniform(10)+1)
             n1 = n2 * result
         }
