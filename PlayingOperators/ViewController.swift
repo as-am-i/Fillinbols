@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var timer = Timer()
     var startTime : Double = 0.0
     var score = 0
+    
+    let countDownLabel = UILabel()
 
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var calculationIndicationLabel: UILabel!
@@ -34,7 +36,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         updateViewFromModel()
-        startTimer()
+        countDown()
     }
     
     // MARK: IBActions
@@ -151,6 +153,59 @@ class ViewController: UIViewController {
                 destination.finalScore = game.scoreCount
                 destination.level = game.getLevel()
             }
+        }
+    }
+    
+    func countDown() {
+        // hide calculations for 4 sec
+        calculationIndicationLabel.isHidden = true
+        fomulaLabel.isHidden = true
+        
+        // set up countDownLabel
+        countDownLabel.text = "3"
+        countDownLabel.font = UIFont.systemFont(ofSize: 36)
+        countDownLabel.textColor = UIColor.blue
+        countDownLabel.sizeToFit()
+        countDownLabel.center = self.view.center
+        self.view.addSubview(countDownLabel)
+        
+        startTime = Date().timeIntervalSince1970 // timeIntervalSince is for sec
+        if timer.isValid == true {
+            timer.invalidate()
+        }
+        timer = Timer.scheduledTimer(timeInterval: 0.01,
+                                     target: self,
+                                     selector: #selector(self.updateCountDown),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func updateCountDown() {
+        let elapsedTime = Date().timeIntervalSince1970 - startTime
+        let flooredErapsedTime = Int(floor(elapsedTime)) // to round down
+        let leftTime = 3 - flooredErapsedTime // 3 2 1 GO
+        
+        if leftTime >= 0 {
+            countDownLabel.text = "\(leftTime)"
+        }
+        if leftTime == 0 {
+            countDownLabel.text = "GO!"
+            
+            countDownLabel.textColor = UIColor.orange
+            countDownLabel.sizeToFit()
+            countDownLabel.center = self.view.center
+            countDownLabel.textAlignment = .center
+        }
+        if leftTime <= -1 {
+            // stop countdown
+            timer.invalidate()
+            countDownLabel.isHidden = true
+            
+            // show calculation
+            calculationIndicationLabel.isHidden = false
+            fomulaLabel.isHidden = false
+            
+            startTimer()
         }
     }
 
