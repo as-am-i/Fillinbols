@@ -14,6 +14,7 @@
 		2A0DBD1E20D0738900F6A58A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DBD1C20D0738900F6A58A /* LaunchScreen.storyboard */; };
 		2A0DBD2620D1D0A200F6A58A /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBD2520D1D0A200F6A58A /* Calculation.swift */; };
 		2A0DBD2820D3214B00F6A58A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBD2720D3214B00F6A58A /* Game.swift */; };
+		2A0DBD2C20D8745000F6A58A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBD2B20D8745000F6A58A /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2A0DBD1F20D0738A00F6A58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A0DBD2520D1D0A200F6A58A /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		2A0DBD2720D3214B00F6A58A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2A0DBD2B20D8745000F6A58A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				2A0DBD1320D0738600F6A58A /* AppDelegate.swift */,
 				2A0DBD1520D0738600F6A58A /* ViewController.swift */,
+				2A0DBD2B20D8745000F6A58A /* ResultViewController.swift */,
 				2A0DBD1720D0738600F6A58A /* Main.storyboard */,
 				2A0DBD2520D1D0A200F6A58A /* Calculation.swift */,
 				2A0DBD2720D3214B00F6A58A /* Game.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0DBD2C20D8745000F6A58A /* ResultViewController.swift in Sources */,
 				2A0DBD1620D0738600F6A58A /* ViewController.swift in Sources */,
 				2A0DBD2620D1D0A200F6A58A /* Calculation.swift in Sources */,
 				2A0DBD1420D0738600F6A58A /* AppDelegate.swift in Sources */,

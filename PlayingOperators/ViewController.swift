@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         if !game.checkGameFinished() {
             
             var index : Int
-
             switch sender.titleLabel?.text {
             case "➕":
                 index = Calculation.OperatorType.addition.rawValue
@@ -69,10 +68,11 @@ class ViewController: UIViewController {
                     timer.invalidate()
                     game.setGameFinished()
                     print("Finished 10 calculations")
+                    callSegue()
                 }
             }
             
-            updateViewFromModel()
+        updateViewFromModel()
         }
     }
     
@@ -109,6 +109,7 @@ class ViewController: UIViewController {
     }
     
     @objc func updateLabel() {
+        
         let elapsedTime = Date().timeIntervalSince1970 - startTime
         let flooredErapsedTime = Int(floor(elapsedTime)) // to round down
         let leftTime = 5 - flooredErapsedTime
@@ -129,8 +130,27 @@ class ViewController: UIViewController {
                 
                 startTimer()
                 updateViewFromModel()
+            } else {
+                game.setGameFinished()  
+                callSegue()
             }
-
+        }
+    }
+    
+    func callSegue() {
+        if game.checkGameFinished() {
+            // move to result view
+            performSegue(withIdentifier: "toResultView", sender: nil)
+        }
+    }
+    
+    // segue preparation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResultView" {
+            if let destination = segue.destination as? ResultViewController {
+                destination.finalScore = game.scoreCount
+                destination.level = game.getLevel()
+            }
         }
     }
 
