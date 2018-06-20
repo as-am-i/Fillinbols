@@ -83,6 +83,12 @@ class Calculation {
             if result == calculate(operatorType: choice, num1: lhs, num2:rhs) {
                 isCorrect = true
             }
+        } else {
+            if choice != .division {
+                if result == calculate(operatorType: choice, num1: lhs, num2:rhs) {
+                    isCorrect = true
+                }
+            }
         }
     }
     

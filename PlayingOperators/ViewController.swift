@@ -78,7 +78,7 @@ class ViewController: UIViewController {
                     callSegue()
                 }
             }
-            
+        
         updateViewFromModel()
         }
     }
