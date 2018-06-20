@@ -162,10 +162,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="additionButton" destination="sNd-fA-pGj" id="DsI-cw-VoK"/>
                         <outlet property="calculationIndicationLabel" destination="FT4-kb-LPH" id="0ZF-ZS-xCz"/>
+                        <outlet property="divisionButton" destination="Qja-43-9oI" id="GvB-Wd-fFS"/>
                         <outlet property="fomulaLabel" destination="ezR-r0-2jJ" id="6vI-E2-xGr"/>
                         <outlet property="levelLabel" destination="xpK-Sq-O9d" id="SVZ-15-HxB"/>
+                        <outlet property="multiplicationButton" destination="sgM-GX-nzl" id="9vJ-cW-B4K"/>
                         <outlet property="scoreCountLabel" destination="Kvb-Ut-Myx" id="n7V-Dp-6oX"/>
+                        <outlet property="subtractionButton" destination="gKk-W0-j8M" id="cBO-5u-cLp"/>
                         <outlet property="timeCountLabel" destination="Dqq-z1-qSu" id="TWX-Sp-Rcr"/>
                         <segue destination="vqt-Se-zwJ" kind="showDetail" identifier="toResultView" id="1eA-6V-jh4"/>
                     </connections>

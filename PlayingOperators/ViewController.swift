@@ -31,6 +31,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var scoreCountLabel: UILabel!
     
+    @IBOutlet weak var additionButton: UIButton!
+    @IBOutlet weak var subtractionButton: UIButton!
+    @IBOutlet weak var multiplicationButton: UIButton!
+    @IBOutlet weak var divisionButton: UIButton!
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,6 +166,12 @@ class ViewController: UIViewController {
         calculationIndicationLabel.isHidden = true
         fomulaLabel.isHidden = true
         
+        // disable buttons for 4 sec
+        additionButton.isEnabled = false
+        subtractionButton.isEnabled = false
+        multiplicationButton.isEnabled = false
+        divisionButton.isEnabled = false
+        
         // set up countDownLabel
         countDownLabel.text = "3"
         countDownLabel.font = UIFont.systemFont(ofSize: 36)
@@ -205,6 +216,12 @@ class ViewController: UIViewController {
             calculationIndicationLabel.isHidden = false
             fomulaLabel.isHidden = false
             
+            // allow user tap on the buttons
+            additionButton.isEnabled = true
+            subtractionButton.isEnabled = true
+            multiplicationButton.isEnabled = true
+            divisionButton.isEnabled = true
+    
             startTimer()
         }
     }
