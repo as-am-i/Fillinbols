@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculationViewController.swift
 //  PlayingOperators
 //
 //  Created by 谷井朝美 on 2018-06-12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculationViewController: UIViewController {
     
     // MARK: Properties
     private var game = Game(gameLevel: .normal)
@@ -35,6 +35,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var subtractionButton: UIButton!
     @IBOutlet weak var multiplicationButton: UIButton!
     @IBOutlet weak var divisionButton: UIButton!
+    @IBOutlet weak var reminderButton: UIButton!
+    
+    private var operatorButtons : [UIButton] {
+        get { return [additionButton, subtractionButton, multiplicationButton, divisionButton, reminderButton] }
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -167,10 +172,7 @@ class ViewController: UIViewController {
         fomulaLabel.isHidden = true
         
         // disable buttons for 4 sec
-        additionButton.isEnabled = false
-        subtractionButton.isEnabled = false
-        multiplicationButton.isEnabled = false
-        divisionButton.isEnabled = false
+        disAbleAllOperators()
         
         // set up countDownLabel
         countDownLabel.text = "3"
@@ -210,21 +212,43 @@ class ViewController: UIViewController {
         if leftTime <= -1 {
             // stop countdown
             timer.invalidate()
-            countDownLabel.isHidden = true
-            
+        
             // show calculation
+            countDownLabel.isHidden = true
             calculationIndicationLabel.isHidden = false
             fomulaLabel.isHidden = false
             
-            // allow user tap on the buttons
-            additionButton.isEnabled = true
-            subtractionButton.isEnabled = true
-            multiplicationButton.isEnabled = true
-            divisionButton.isEnabled = true
+            // allow user tap on the buttons according to game level
+            setUpOperators(gameLevel: "easy")
     
             startTimer()
         }
     }
-
+    
+    func setUpOperators(gameLevel: String) {
+        switch gameLevel {
+        case "easy":
+            toggleOperatorButtons(indexesOfOperators: [0, 1], isEnabled: true, isHidden: false)
+        case "normal":
+            toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3], isEnabled: true, isHidden: false)
+        case "hard":
+            toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3, 4], isEnabled: true, isHidden:false)
+        default:
+            break
+        }
+    }
+    
+    func disAbleAllOperators() {
+        toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3, 4], isEnabled: false, isHidden: true)
+    }
+    
+    func toggleOperatorButtons(indexesOfOperators: [Int], isEnabled: Bool, isHidden: Bool) {
+        for index in indexesOfOperators {
+            if index < 5 { // max: 5 operators
+                operatorButtons[index].isEnabled = isEnabled
+                operatorButtons[index].isHidden = isHidden
+            }
+        }
+    }
 }
 

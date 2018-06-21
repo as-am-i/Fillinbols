@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculation View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlayingOperators" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculationViewController" customModule="PlayingOperators" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-r0-2jJ">
-                                <rect key="frame" x="67" y="303.5" width="240" height="60"/>
+                                <rect key="frame" x="67.5" y="303.5" width="240" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GJA-mV-rm3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="ycr-Rg-Cr9"/>
@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the correct operator! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gY-hb-C4s">
-                                <rect key="frame" x="55" y="174" width="264" height="27"/>
+                                <rect key="frame" x="55.5" y="174" width="264" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="264" id="KPu-7B-Hck"/>
                                     <constraint firstAttribute="height" constant="27" id="c6G-FX-H6j"/>
@@ -81,11 +81,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="cqr-0R-CaS">
-                                <rect key="frame" x="41.5" y="446" width="292" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="cqr-0R-CaS">
+                                <rect key="frame" x="37.5" y="446" width="300" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNd-fA-pGj">
-                                        <rect key="frame" x="0.0" y="0.0" width="43" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="B77-Cg-Bjh"/>
+                                            <constraint firstAttribute="height" constant="40" id="vlO-hs-Hc9"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <state key="normal" title="➕">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,7 +99,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKk-W0-j8M">
-                                        <rect key="frame" x="83" y="0.0" width="43" height="40"/>
+                                        <rect key="frame" x="64" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AWz-pZ-Krg"/>
+                                            <constraint firstAttribute="width" constant="45" id="nIU-kE-JI1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <state key="normal" title="➖">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,7 +113,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgM-GX-nzl">
-                                        <rect key="frame" x="166" y="0.0" width="43" height="40"/>
+                                        <rect key="frame" x="127.5" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="Bbt-KA-FCg"/>
+                                            <constraint firstAttribute="height" constant="40" id="DTW-eV-Jgc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <state key="normal" title="✖️">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -115,7 +127,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qja-43-9oI">
-                                        <rect key="frame" x="249" y="0.0" width="43" height="40"/>
+                                        <rect key="frame" x="191.5" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="WSk-Go-MEl"/>
+                                            <constraint firstAttribute="width" constant="45" id="fJB-Nc-mpo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <state key="normal" title="➗">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,14 +140,29 @@
                                             <action selector="chooseOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zew-HO-xjM"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhd-RW-Qbn">
+                                        <rect key="frame" x="255" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8aG-nh-QnN"/>
+                                            <constraint firstAttribute="width" constant="45" id="yB1-IU-TBR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="33"/>
+                                        <state key="normal" title="%">
+                                            <color key="titleColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="292" id="T2Z-df-R1q"/>
+                                    <constraint firstItem="sgM-GX-nzl" firstAttribute="centerY" secondItem="sNd-fA-pGj" secondAttribute="centerY" id="2wl-GB-FJm"/>
+                                    <constraint firstItem="nhd-RW-Qbn" firstAttribute="centerY" secondItem="cqr-0R-CaS" secondAttribute="centerY" id="Bfl-je-zyb"/>
+                                    <constraint firstItem="Qja-43-9oI" firstAttribute="centerY" secondItem="sNd-fA-pGj" secondAttribute="centerY" id="HOh-4s-zsG"/>
+                                    <constraint firstItem="gKk-W0-j8M" firstAttribute="centerY" secondItem="sNd-fA-pGj" secondAttribute="centerY" id="I8K-p3-lqB"/>
+                                    <constraint firstAttribute="width" constant="300" id="T2Z-df-R1q"/>
                                     <constraint firstAttribute="height" constant="40" id="xFK-s5-l8e"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT4-kb-LPH">
-                                <rect key="frame" x="67" y="274.5" width="241.5" height="21"/>
+                                <rect key="frame" x="67.5" y="274.5" width="240" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PVW-y3-5id"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74.5" id="jx1-4J-3QU"/>
@@ -168,6 +199,7 @@
                         <outlet property="fomulaLabel" destination="ezR-r0-2jJ" id="6vI-E2-xGr"/>
                         <outlet property="levelLabel" destination="xpK-Sq-O9d" id="SVZ-15-HxB"/>
                         <outlet property="multiplicationButton" destination="sgM-GX-nzl" id="9vJ-cW-B4K"/>
+                        <outlet property="reminderButton" destination="nhd-RW-Qbn" id="1hj-0Q-Xio"/>
                         <outlet property="scoreCountLabel" destination="Kvb-Ut-Myx" id="n7V-Dp-6oX"/>
                         <outlet property="subtractionButton" destination="gKk-W0-j8M" id="cBO-5u-cLp"/>
                         <outlet property="timeCountLabel" destination="Dqq-z1-qSu" id="TWX-Sp-Rcr"/>
