@@ -25,12 +25,12 @@ class Game {
         scoreCount = 0
         isFinished = false
         level = gameLevel
-        setUpCalulations()
+        setUpCalulations(withLevel: level)
     }
     
-    func setUpCalulations(){
+    func setUpCalulations(withLevel: Level){
         for _ in 1...10 {
-            let calculation = Calculation()
+            let calculation = Calculation(level: level)
             calculations.append(calculation)
         }
     }

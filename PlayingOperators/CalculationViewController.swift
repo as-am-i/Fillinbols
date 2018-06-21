@@ -11,7 +11,7 @@ import UIKit
 class CalculationViewController: UIViewController {
     
     // MARK: Properties
-    private var game = Game(gameLevel: .normal)
+    private var game = Game(gameLevel: .hard)
     private var indexOfCalculation = 0
     private var calc : Calculation {
         get { return game.getCalculation(index: indexOfCalculation) }
@@ -63,6 +63,8 @@ class CalculationViewController: UIViewController {
                 index = Calculation.OperatorType.multiplication.rawValue
             case "➗":
                 index = Calculation.OperatorType.division.rawValue
+            case "%":
+                index = Calculation.OperatorType.modulus.rawValue
             default:
                 index = 0
             }
@@ -219,22 +221,20 @@ class CalculationViewController: UIViewController {
             fomulaLabel.isHidden = false
             
             // allow user tap on the buttons according to game level
-            setUpOperators(gameLevel: "easy")
+            setUpOperators(gameLevel: .hard)
     
             startTimer()
         }
     }
     
-    func setUpOperators(gameLevel: String) {
+    func setUpOperators(gameLevel: Game.Level) {
         switch gameLevel {
-        case "easy":
+        case .easy:
             toggleOperatorButtons(indexesOfOperators: [0, 1], isEnabled: true, isHidden: false)
-        case "normal":
+        case .normal:
             toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3], isEnabled: true, isHidden: false)
-        case "hard":
+        case .hard:
             toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3, 4], isEnabled: true, isHidden:false)
-        default:
-            break
         }
     }
     
