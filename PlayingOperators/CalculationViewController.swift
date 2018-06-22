@@ -29,6 +29,8 @@ class CalculationViewController: UIViewController {
     var score = 0
     
     let countDownLabel = UILabel()
+    let circle = UIView()
+    let circleLabel = UILabel()
 
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var calculationIndicationLabel: UILabel!
@@ -78,6 +80,10 @@ class CalculationViewController: UIViewController {
             game.calculateScore(currentIndexOfCalculation: indexOfCalculation, score: score)
         
             if calc.isCorrect {
+                
+//                fomulaLabel.text = calc.getFormulaWithOperator(operatorText: (sender.titleLabel?.text)!)
+                showCircleLabel()
+                
                 if indexOfCalculation < 9 {
                     indexOfCalculation += 1
                     calc = game.getCalculation(index: indexOfCalculation)
@@ -255,6 +261,36 @@ class CalculationViewController: UIViewController {
                 operatorButtons[index].isHidden = isHidden
             }
         }
+    }
+    
+    func showCricle() {
+        circle.frame = CGRect(x:5, y:5, width:12, height:12)
+        circle.alpha = 0.5
+        circle.layer.cornerRadius = 12 * 0.5
+        circle.center = self.view.center
+//        circle.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(circle)
+    }
+    
+    func showCircleLabel() {
+        circleLabel.isHidden = false
+        
+        circleLabel.text = "⃝"
+        circleLabel.alpha = 0.6
+        circleLabel.font = UIFont.systemFont(ofSize: 400, weight: UIFont.Weight.ultraLight)
+        circleLabel.textColor = UIColor.red
+        circleLabel.sizeToFit()
+        circleLabel.center = self.view.center
+        self.view.addSubview(circleLabel)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: [.curveEaseOut], animations: {
+            self.circleLabel.alpha = 0.0
+        }, completion: nil)
+        
+//        let dispatchTime = DispatchTime.now() + 0.1
+//        DispatchQueue.main.asyncAfter( deadline: dispatchTime ) {
+//            self.circleLabel.isHidden = true
+//        }
     }
 }
 

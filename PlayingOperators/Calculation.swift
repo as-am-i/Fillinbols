@@ -110,6 +110,10 @@ class Calculation {
         }
     }
     
+    func getFormulaWithOperator(operatorText: String) -> String {
+        return "\(lhs) \(operatorText) \(rhs) = \(result)"
+    }
+    
 //    func addScore(game: Game, indexOfCalculation: Int) {
 //        if isCorrect {
 //
