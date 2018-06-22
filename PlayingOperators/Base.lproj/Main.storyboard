@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Level Choice View Controller-->
+        <!--Fillinbols-->
         <scene sceneID="31t-Z4-AAS">
             <objects>
                 <viewController id="Nk7-PL-rHi" customClass="LevelChoiceViewController" customModule="PlayingOperators" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="EASY">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.1215686275" green="0.0" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="MPv-AY-YRe"/>
@@ -42,7 +42,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="NORMAL">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.1215686275" green="0.0" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="PLQ-NS-kXf"/>
@@ -56,12 +56,22 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="HARD">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.1215686275" green="0.0" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="dbS-RY-WAe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fillinbols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLM-gB-utj">
+                                <rect key="frame" x="11.5" y="527" width="352" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="352" id="MZo-Ad-UEg"/>
+                                    <constraint firstAttribute="height" constant="132" id="k9d-SI-fj5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="110"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47843137254901963" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -69,12 +79,14 @@
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="5pH-ic-NK1"/>
                             <constraint firstItem="4a4-9C-wu4" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="Q8E-Zz-P5a"/>
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="centerY" secondItem="cui-ra-1xY" secondAttribute="centerY" id="QdQ-iT-hLH"/>
+                            <constraint firstItem="VMp-2O-mCf" firstAttribute="bottom" secondItem="PLM-gB-utj" secondAttribute="bottom" constant="8" id="UXl-DZ-kYv"/>
                             <constraint firstItem="6O1-zY-WOF" firstAttribute="top" secondItem="A75-HZ-Sp8" secondAttribute="bottom" constant="40" id="W4H-P6-Msj"/>
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="top" secondItem="4a4-9C-wu4" secondAttribute="bottom" constant="40" id="oDf-qC-d5a"/>
+                            <constraint firstItem="PLM-gB-utj" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="tfb-F8-jXc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VMp-2O-mCf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cff-97-mxe"/>
+                    <navigationItem key="navigationItem" title="Fillinbols" id="Cff-97-mxe"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toCalculationView" id="7ZW-5R-2ba"/>
                     </connections>
@@ -141,8 +153,8 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the correct operator! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gY-hb-C4s">
-                                <rect key="frame" x="64" y="218" width="247" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill In Fomula with Symbol! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gY-hb-C4s">
+                                <rect key="frame" x="67.5" y="218" width="240" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="KPu-7B-Hck"/>
                                     <constraint firstAttribute="height" constant="27" id="c6G-FX-H6j"/>
@@ -292,23 +304,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUh-GF-4OT">
-                                <rect key="frame" x="25.5" y="120" width="324.5" height="46"/>
+                                <rect key="frame" x="61.5" y="120" width="253" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="269" id="DYT-43-ftN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DYT-43-ftN"/>
                                     <constraint firstAttribute="height" constant="46" id="O9d-WA-A5j"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="38"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="38"/>
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-Gu-Kzz">
-                                <rect key="frame" x="25.5" y="247.5" width="44" height="21"/>
+                                <rect key="frame" x="61.5" y="247.5" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4E-9C-6Cq">
-                                <rect key="frame" x="25.5" y="276.5" width="89" height="21"/>
+                                <rect key="frame" x="61.5" y="276.5" width="89" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ekf-Zq-mJA"/>
                                     <constraint firstAttribute="width" constant="89" id="wRZ-Yp-ZIV"/>
@@ -385,6 +397,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
