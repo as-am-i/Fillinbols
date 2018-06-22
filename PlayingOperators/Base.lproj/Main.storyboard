@@ -28,7 +28,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="EASY">
-                                    <color key="titleColor" red="0.1215686275" green="0.0" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="MPv-AY-YRe"/>
@@ -42,7 +42,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="NORMAL">
-                                    <color key="titleColor" red="0.1215686275" green="0.0" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="PLQ-NS-kXf"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="HARD">
-                                    <color key="titleColor" red="0.1215686275" green="0.0" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="dbS-RY-WAe"/>

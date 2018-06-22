@@ -31,10 +31,6 @@ class Calculation {
         (lhs, rhs, result) = createNewFomula(level: level)
     }
     
-//    func getTimeCount() -> String {
-//        return "Time: \(timeCount)"
-//    }
-    
     func getFormula() -> String {
         return "\(lhs) ❓ \(rhs) = \(result)"
     }
@@ -113,14 +109,4 @@ class Calculation {
     func getFormulaWithOperator(operatorText: String) -> String {
         return "\(lhs) \(operatorText) \(rhs) = \(result)"
     }
-    
-//    func addScore(game: Game, indexOfCalculation: Int) {
-//        if isCorrect {
-//
-//        }
-//    }
-    
-    
-    
-    
 }

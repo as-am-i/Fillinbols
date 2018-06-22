@@ -31,6 +31,7 @@ class CalculationViewController: UIViewController {
     let countDownLabel = UILabel()
     let circle = UIView()
     let circleLabel = UILabel()
+    let crossLabel = UILabel()
 
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var calculationIndicationLabel: UILabel!
@@ -81,7 +82,6 @@ class CalculationViewController: UIViewController {
         
             if calc.isCorrect {
                 
-//                fomulaLabel.text = calc.getFormulaWithOperator(operatorText: (sender.titleLabel?.text)!)
                 showCircleLabel()
                 
                 if indexOfCalculation < 9 {
@@ -92,9 +92,10 @@ class CalculationViewController: UIViewController {
                 } else {
                     timer.invalidate()
                     game.setGameFinished()
-                    print("Finished 10 calculations")
                     callSegue()
                 }
+            } else {
+                showCrossLabel()
             }
         
         updateViewFromModel()
@@ -107,11 +108,6 @@ class CalculationViewController: UIViewController {
         fomulaLabel.text = calc.getFormula()
         scoreCountLabel.text = game.getScoreCount()
         calculationIndicationLabel.text = game.getCalculationIndex(currentIndexOfCalcultion: indexOfCalculation)
-    }
-    
-    func startNewGame() {
-        game = Game(gameLevel: .normal)
-        calc = game.getCalculation(index: 0)
     }
     
     func startTimer() {
@@ -263,22 +259,13 @@ class CalculationViewController: UIViewController {
         }
     }
     
-    func showCricle() {
-        circle.frame = CGRect(x:5, y:5, width:12, height:12)
-        circle.alpha = 0.5
-        circle.layer.cornerRadius = 12 * 0.5
-        circle.center = self.view.center
-//        circle.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(circle)
-    }
-    
     func showCircleLabel() {
         circleLabel.isHidden = false
         
-        circleLabel.text = "⃝"
+        circleLabel.text = "✓"
         circleLabel.alpha = 0.6
-        circleLabel.font = UIFont.systemFont(ofSize: 400, weight: UIFont.Weight.ultraLight)
-        circleLabel.textColor = UIColor.red
+        circleLabel.font = UIFont.systemFont(ofSize: 400, weight: UIFont.Weight.medium)
+        circleLabel.textColor = UIColor.green
         circleLabel.sizeToFit()
         circleLabel.center = self.view.center
         self.view.addSubview(circleLabel)
@@ -286,11 +273,22 @@ class CalculationViewController: UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0.2, options: [.curveEaseOut], animations: {
             self.circleLabel.alpha = 0.0
         }, completion: nil)
+    }
+    
+    func showCrossLabel() {
+        crossLabel.isHidden = false
         
-//        let dispatchTime = DispatchTime.now() + 0.1
-//        DispatchQueue.main.asyncAfter( deadline: dispatchTime ) {
-//            self.circleLabel.isHidden = true
-//        }
+        crossLabel.text = "✕"
+        crossLabel.alpha = 0.6
+        crossLabel.font = UIFont.systemFont(ofSize: 400, weight: UIFont.Weight.ultraLight)
+        crossLabel.textColor = UIColor.red
+        crossLabel.sizeToFit()
+        crossLabel.center = self.view.center
+        self.view.addSubview(crossLabel)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: [.curveEaseOut], animations: {
+            self.crossLabel.alpha = 0.0
+        }, completion: nil)
     }
 }
 
