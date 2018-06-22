@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="0.73948523116438358" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.47843137254901963" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6O1-zY-WOF" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="46g-RC-tMn"/>
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="5pH-ic-NK1"/>
@@ -133,12 +133,12 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-r0-2jJ">
-                                <rect key="frame" x="50.5" y="303.5" width="274" height="60"/>
+                                <rect key="frame" x="68" y="303.5" width="240" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GJA-mV-rm3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="ycr-Rg-Cr9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the correct operator! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gY-hb-C4s">
@@ -235,7 +235,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT4-kb-LPH">
-                                <rect key="frame" x="50.5" y="274.5" width="274" height="21"/>
+                                <rect key="frame" x="68" y="274.5" width="240" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PVW-y3-5id"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74.5" id="jx1-4J-3QU"/>
@@ -383,6 +383,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dh1-Hj-SDR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -394,4 +396,5 @@
             <point key="canvasLocation" x="-529" y="33"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

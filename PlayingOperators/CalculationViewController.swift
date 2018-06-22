@@ -183,8 +183,8 @@ class CalculationViewController: UIViewController {
         
         // set up countDownLabel
         countDownLabel.text = "3"
-        countDownLabel.font = UIFont.systemFont(ofSize: 36)
-        countDownLabel.textColor = UIColor.blue
+        countDownLabel.font = UIFont.systemFont(ofSize: 36, weight: UIFont.Weight.thin)
+        countDownLabel.textColor = UIColor.darkGray
         countDownLabel.sizeToFit()
         countDownLabel.center = self.view.center
         self.view.addSubview(countDownLabel)
@@ -211,8 +211,9 @@ class CalculationViewController: UIViewController {
         if leftTime == 0 {
             countDownLabel.text = "GO!"
             
-            countDownLabel.textColor = UIColor.orange
+            countDownLabel.textColor = UIColor.red
             countDownLabel.sizeToFit()
+            countDownLabel.font = UIFont.systemFont(ofSize: 36, weight: UIFont.Weight.medium)
             countDownLabel.center = self.view.center
             countDownLabel.textAlignment = .center
         }
