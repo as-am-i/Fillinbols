@@ -53,6 +53,10 @@ class Game {
 
     }
     
+    func getLevelValue() -> Level {
+        return level
+    }
+    
     func getCalculation(index: Int) -> Calculation {
         return calculations[index]
     }

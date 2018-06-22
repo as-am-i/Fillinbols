@@ -11,14 +11,19 @@ import UIKit
 class CalculationViewController: UIViewController {
     
     // MARK: Properties
-    private var game = Game(gameLevel: .hard)
+    var levelChosen : Game.Level?
+    
+    lazy var game = Game(gameLevel: levelChosen!) // never forget "lazy"
+    
     private var indexOfCalculation = 0
+    
     private var calc : Calculation {
         get { return game.getCalculation(index: indexOfCalculation) }
         set {
              
         }
     }
+    
     var timer = Timer()
     var startTime : Double = 0.0
     var score = 0
@@ -221,7 +226,7 @@ class CalculationViewController: UIViewController {
             fomulaLabel.isHidden = false
             
             // allow user tap on the buttons according to game level
-            setUpOperators(gameLevel: .hard)
+            setUpOperators(gameLevel: levelChosen!)
     
             startTimer()
         }
