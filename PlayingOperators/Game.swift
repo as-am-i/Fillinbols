@@ -7,40 +7,56 @@
 //
 
 import Foundation
+import CoreData
 
-class Game {
+@objc(Game)
+class Game: NSManagedObject {
     
-    private(set) var scoreCount = 0
-    private var isFinished = false
-    let level : Level
-    var calculations = [Calculation]()
+//    var managedObjectContext: NSManagedObjectContext!
+//    No need to declare managedObjectContext in Game Model because the Model extends NSManagedObject (parent of NSManagedObjectContext)
     
+//    private(set) var score = 0
+//    private var isFinished = false
+//    var level : Level!
+    var calculationsArray = [Calculation]()
+//
     enum Level : String {
         case easy = "EASY"
         case normal = "NORMAL"
         case hard = "HARD"
     }
     
-    init(gameLevel: Level) {
-        scoreCount = 0
-        isFinished = false
-        level = gameLevel
-        setUpCalulations(withLevel: level)
+//    init(gameLevel: Level) {
+//        scoreCount = 0
+//        isFinished = false
+//        level = gameLevel
+//        setUpCalulations(withLevel: level)
+//    }
+    
+    func setupGameProperties(gameLevel: Level) {
+        self.score = 0
+        self.isFinished = false
+        self.level = gameLevel.rawValue
+        setUpCalulations(gamelevel: gameLevel)
     }
     
-    func setUpCalulations(withLevel: Level){
+    func setUpCalulations(gamelevel: Level){
         for _ in 1...10 {
-            let calculation = Calculation(level: level)
-            calculations.append(calculation)
+//            let calculation = Calculation(level: gamelevel)
+            let calculation = Calculation(context: managedObjectContext!)
+            calculation.setupCalculationProperties(gameLevel: gamelevel)
+            
+            self.calculations?.adding(calculation) // self.calculations == relationship on CoreData, and relationship always works with Set
+            self.calculationsArray.append(calculation)
         }
     }
     
     func getScoreCount() -> String {
-        return "Score: \(scoreCount)"
+        return "Score: \(score)"
     }
     
     func getLevel() -> String {
-        return "\(level.rawValue)"
+        return self.level!
     }
     
     func getCalculationIndex(currentIndexOfCalcultion: Int) -> String {
@@ -54,18 +70,18 @@ class Game {
     }
     
     func getLevelValue() -> Level {
-        return level
+        return Game.Level(rawValue: self.level!)!
     }
     
     func getCalculation(index: Int) -> Calculation {
-        return calculations[index]
+        return calculationsArray[index]
     }
     
     func calculateScore(currentIndexOfCalculation: Int, score: Int) {
-        if calculations[currentIndexOfCalculation].isCorrect {
-            scoreCount += score
+        if calculationsArray[currentIndexOfCalculation].isCorrect {
+            self.score = self.score + Int32(score)
         } else {
-            scoreCount -= 1
+            self.score -= 1
         }
     }
     

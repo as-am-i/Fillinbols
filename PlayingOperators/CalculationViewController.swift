@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class CalculationViewController: UIViewController {
     
     // MARK: Properties
+    
+    var managedObjectContext: NSManagedObjectContext!
+    
     var levelChosen : Game.Level?
     
-    lazy var game = Game(gameLevel: levelChosen!) // never forget "lazy"
+//    lazy var game = Game(gameLevel: levelChosen!) // never forget "lazy"
+    lazy var game = Game(context: managedObjectContext!)
+//    game.setupGameProperties(gameLevel: levelChosen)
+    
     
     private var indexOfCalculation = 0
     
@@ -52,6 +59,8 @@ class CalculationViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        game.setupGameProperties(gameLevel: levelChosen!)
+        
         // Do any additional setup after loading the view, typically from a nib.
         updateViewFromModel()
         countDown()
@@ -169,7 +178,7 @@ class CalculationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResultView" {
             if let destination = segue.destination as? ResultViewController {
-                destination.finalScore = game.scoreCount
+                destination.finalScore = Int(game.score)
                 destination.level = game.getLevel()
             }
         }

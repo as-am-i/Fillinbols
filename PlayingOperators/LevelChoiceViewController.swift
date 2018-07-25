@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class LevelChoiceViewController: UIViewController {
     
     var levelChosen: Game.Level?
+    
+    var managedObjectContext: NSManagedObjectContext!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,7 @@ class LevelChoiceViewController: UIViewController {
         if segue.identifier == "toCalculationView" {
             if let destination = segue.destination as? CalculationViewController {
                 destination.levelChosen = levelChosen!
+                destination.managedObjectContext = managedObjectContext
             }
         }
     }

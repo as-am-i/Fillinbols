@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import CoreData
 
-class Calculation {
+@objc(Calculation)
+class Calculation: NSManagedObject {
     
     enum OperatorType: Int {
         case addition = 0
@@ -21,18 +23,22 @@ class Calculation {
     let allOperatorTypes = [OperatorType.addition, OperatorType.substraction, OperatorType.multiplication, OperatorType.division, OperatorType.modulus]
     
     // fomula
-    private var lhs = 0
-    private var rhs = 0
-    private var result = 0
+//    private var lhs = 0
+//    private var rhs = 0
+//    private var result = 0
     
     var isCorrect = false
     
-    init(level: Game.Level) {
-        (lhs, rhs, result) = createNewFomula(level: level)
+//    init(level: Game.Level) {
+//        (lhs, rhs, result) = createNewFomula(level: level)
+//    }
+    
+    func setupCalculationProperties(gameLevel: Game.Level) {
+        (self.lhs, self.rhs, self.result) = createNewFomula(level: gameLevel)
     }
     
     func getFormula() -> String {
-        return "\(lhs) ❓ \(rhs) = \(result)"
+        return "\(self.lhs) ❓ \(self.rhs) = \(self.result)"
     }
     
     func calculate(operatorType: OperatorType, num1 :Int, num2: Int) -> Int {
@@ -53,7 +59,7 @@ class Calculation {
         return result
     }
     
-    func createNewFomula(level: Game.Level) -> (num1: Int, num2: Int, result: Int) {
+    func createNewFomula(level: Game.Level) -> (num1: Int32, num2: Int32, result: Int64) {
         
         var n1 : Int
         var n2 : Int
@@ -88,18 +94,18 @@ class Calculation {
             result = calculate(operatorType: operatorType, num1: n1, num2: n2)
         }
         
-        return (n1, n2, result)
+        return (Int32(n1), Int32(n2), Int64(result))
     }
     
     func checkAnswerIsCorrect(choice: OperatorType) {
         isCorrect = false
         if rhs != 0 {
-            if result == calculate(operatorType: choice, num1: lhs, num2:rhs) {
+            if result == calculate(operatorType: choice, num1: Int(lhs), num2: Int(rhs)) {
                 isCorrect = true
             }
         } else {
             if choice != .division && choice != .modulus {
-                if result == calculate(operatorType: choice, num1: lhs, num2:rhs) {
+                if result == calculate(operatorType: choice, num1: Int(lhs), num2: Int(rhs)) {
                     isCorrect = true
                 }
             }
