@@ -289,7 +289,7 @@
                         <outlet property="scoreCountLabel" destination="Kvb-Ut-Myx" id="n7V-Dp-6oX"/>
                         <outlet property="subtractionButton" destination="gKk-W0-j8M" id="cBO-5u-cLp"/>
                         <outlet property="timeCountLabel" destination="Dqq-z1-qSu" id="TWX-Sp-Rcr"/>
-                        <segue destination="vqt-Se-zwJ" kind="presentation" identifier="toResultView" id="1eA-6V-jh4"/>
+                        <segue destination="vqt-Se-zwJ" kind="show" identifier="toResultView" id="1eA-6V-jh4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -305,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUh-GF-4OT">
-                                <rect key="frame" x="61.5" y="120" width="253" height="46"/>
+                                <rect key="frame" x="61.5" y="164" width="253" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DYT-43-ftN"/>
                                     <constraint firstAttribute="height" constant="46" id="O9d-WA-A5j"/>
@@ -369,8 +369,8 @@
                                 </constraints>
                                 <state key="normal" title="RANK"/>
                                 <connections>
-                                    <action selector="callSegue:" destination="vqt-Se-zwJ" eventType="touchUpInside" id="MrE-K4-oCa"/>
-                                    <segue destination="0vV-uh-Bnp" kind="presentation" identifier="toRankView" id="qew-pC-l8l"/>
+                                    <action selector="callSegue:" destination="vqt-Se-zwJ" eventType="touchDown" id="eyU-4B-HbV"/>
+                                    <segue destination="0vV-uh-Bnp" kind="show" identifier="toRankView" id="qew-pC-l8l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fep-GO-ayW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="33"/>
+            <point key="canvasLocation" x="1728.8" y="32.833583208395808"/>
         </scene>
         <!--Rank View Controller-->
         <scene sceneID="jax-bj-k0H">
