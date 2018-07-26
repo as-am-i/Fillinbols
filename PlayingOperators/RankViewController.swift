@@ -49,6 +49,9 @@ class RankViewController: UIViewController, UITableViewDelegate {
     fileprivate func loadAllResult() {
         let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
         
+        let sort = NSSortDescriptor(key: #keyPath(Game.score), ascending: false)
+        fetchRequest.sortDescriptors = [sort]
+        
         do {
             rank = try managedObjectContext.fetch(fetchRequest)
             tableView.reloadData()
@@ -81,7 +84,7 @@ extension RankViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RankCell", for: indexPath) as! RankTableViewCell
         let result = rank[indexPath.row]
 
-        cell.update(with: result)
+        cell.update(with: result, index: indexPath)
         return cell
     }
 }

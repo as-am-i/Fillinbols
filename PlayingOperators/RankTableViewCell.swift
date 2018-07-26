@@ -15,8 +15,8 @@ class RankTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     
-    func update(with result: Game) {
-//        rankLabel.text = 
+    func update(with result: Game, index: IndexPath) {
+        rankLabel.text = String(format: "%d", index.row + 1)
         scoreLabel.text = "\(result.score)"
         userNameLabel.text = result.name
         levelLabel.text = result.level
