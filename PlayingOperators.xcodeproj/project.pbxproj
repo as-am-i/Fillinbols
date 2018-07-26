@@ -16,6 +16,8 @@
 		2A0DBD2820D3214B00F6A58A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBD2720D3214B00F6A58A /* Game.swift */; };
 		2A0DBD2C20D8745000F6A58A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBD2B20D8745000F6A58A /* ResultViewController.swift */; };
 		2A4C55C52107C1E30066EEFB /* PlayingOperators.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C55C32107C1E30066EEFB /* PlayingOperators.xcdatamodeld */; };
+		2A4C55E8210944F60066EEFB /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C55E7210944F60066EEFB /* RankViewController.swift */; };
+		2A4C55EA210A6EB20066EEFB /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C55E9210A6EB20066EEFB /* RankTableViewCell.swift */; };
 		2AE2108920DC5CF4005FB124 /* LevelChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2108820DC5CF4005FB124 /* LevelChoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		2A0DBD2720D3214B00F6A58A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2A0DBD2B20D8745000F6A58A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2A4C55C42107C1E30066EEFB /* PlayingOperators.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayingOperators.xcdatamodel; sourceTree = "<group>"; };
+		2A4C55E7210944F60066EEFB /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		2A4C55E9210A6EB20066EEFB /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		2AE2108820DC5CF4005FB124 /* LevelChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelChoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +72,8 @@
 				2A0DBD1520D0738600F6A58A /* CalculationViewController.swift */,
 				2A0DBD2B20D8745000F6A58A /* ResultViewController.swift */,
 				2A0DBD1720D0738600F6A58A /* Main.storyboard */,
+				2A4C55E7210944F60066EEFB /* RankViewController.swift */,
+				2A4C55E9210A6EB20066EEFB /* RankTableViewCell.swift */,
 				2A4C55C32107C1E30066EEFB /* PlayingOperators.xcdatamodeld */,
 				2AE2108820DC5CF4005FB124 /* LevelChoiceViewController.swift */,
 				2A0DBD2520D1D0A200F6A58A /* Calculation.swift */,
@@ -151,11 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE2108920DC5CF4005FB124 /* LevelChoiceViewController.swift in Sources */,
+				2A4C55EA210A6EB20066EEFB /* RankTableViewCell.swift in Sources */,
 				2A0DBD2C20D8745000F6A58A /* ResultViewController.swift in Sources */,
 				2A0DBD1620D0738600F6A58A /* CalculationViewController.swift in Sources */,
 				2A0DBD2620D1D0A200F6A58A /* Calculation.swift in Sources */,
 				2A0DBD1420D0738600F6A58A /* AppDelegate.swift in Sources */,
 				2A0DBD2820D3214B00F6A58A /* Game.swift in Sources */,
+				2A4C55E8210944F60066EEFB /* RankViewController.swift in Sources */,
 				2A4C55C52107C1E30066EEFB /* PlayingOperators.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

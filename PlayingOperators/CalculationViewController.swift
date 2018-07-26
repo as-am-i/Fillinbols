@@ -180,6 +180,8 @@ class CalculationViewController: UIViewController {
             if let destination = segue.destination as? ResultViewController {
                 destination.finalScore = Int(game.score)
                 destination.level = game.getLevel()
+                destination.game = game
+                destination.managedObjectContext = managedObjectContext
             }
         }
     }
