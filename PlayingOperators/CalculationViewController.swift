@@ -126,6 +126,7 @@ class CalculationViewController: UIViewController {
             exponentLabel.text = calc.getFomulaExponent()
         }
         
+        timeCountLabel.text = game.getCalculationTimeAsString()
         scoreCountLabel.text = game.getScoreCount()
         calculationIndicationLabel.text = game.getCalculationIndex(currentIndexOfCalcultion: indexOfCalculation)
     }
@@ -133,8 +134,6 @@ class CalculationViewController: UIViewController {
     func startTimer() {
         
         startTime = Date().timeIntervalSince1970 // timeIntervalSince is for sec
-        timeCountLabel.text = "Time: 5"
-        
         
         // must remove a timer before recreating a new one
         // otherwise, invalidate() method called later will not be executed
@@ -153,7 +152,7 @@ class CalculationViewController: UIViewController {
         
         let elapsedTime = Date().timeIntervalSince1970 - startTime
         let flooredErapsedTime = Int(floor(elapsedTime)) // to round down
-        let leftTime = 5 - flooredErapsedTime
+        let leftTime = game.getCalculationTimeAsInt() - flooredErapsedTime
         
         if leftTime >= 0 {
             timeCountLabel.text = "Time: \(leftTime)"

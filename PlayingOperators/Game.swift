@@ -39,6 +39,7 @@ class Game: NSManagedObject {
         self.isFinished = false
         self.level = gameLevel.rawValue
         setUpCalulations(gamelevel: gameLevel)
+        setupTimeForCalculation(gameLevel: gameLevel)
     }
     
     func setUpCalulations(gamelevel: Level){
@@ -52,12 +53,33 @@ class Game: NSManagedObject {
         }
     }
     
+    func setupTimeForCalculation(gameLevel: Level) {
+        switch gameLevel {
+        case .easy:
+            self.calc_time = 3
+        case .normal:
+            self.calc_time = 5
+        case .hard:
+            self.calc_time = 8
+        case .dieHard:
+            self.calc_time = 10
+        }
+    }
+    
     func getScoreCount() -> String {
         return "Score: \(score)"
     }
     
     func getLevel() -> String {
         return self.level!
+    }
+    
+    func getCalculationTimeAsInt() -> Int {
+        return Int(self.calc_time)
+    }
+    
+    func getCalculationTimeAsString() -> String {
+        return "Time: \(self.calc_time)"
     }
     
     func getCalculationIndex(currentIndexOfCalcultion: Int) -> String {
