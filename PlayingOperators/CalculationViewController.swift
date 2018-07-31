@@ -43,6 +43,11 @@ class CalculationViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var calculationIndicationLabel: UILabel!
     @IBOutlet weak var fomulaLabel: UILabel!
+    @IBOutlet weak var fomulaResultLabel: UILabel!
+    
+    
+    @IBOutlet weak var exponentLabel: UILabel!
+    
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var scoreCountLabel: UILabel!
     
@@ -61,7 +66,6 @@ class CalculationViewController: UIViewController {
         super.viewDidLoad()
         game.setupGameProperties(gameLevel: levelChosen!)
         
-        // Do any additional setup after loading the view, typically from a nib.
         updateViewFromModel()
         countDown()
     }
@@ -114,7 +118,14 @@ class CalculationViewController: UIViewController {
     //MARK: Helper methods
     private func updateViewFromModel() {
         levelLabel.text = game.getLevel()
-        fomulaLabel.text = calc.getFormula()
+        fomulaLabel.text = calc.getFormula(level: levelChosen!)
+        fomulaResultLabel.text = calc.getFomulaResult()
+        
+        if levelChosen == Game.Level.dieHard {
+//            exponentLabel.isHidden = false
+            exponentLabel.text = calc.getFomulaExponent()
+        }
+        
         scoreCountLabel.text = game.getScoreCount()
         calculationIndicationLabel.text = game.getCalculationIndex(currentIndexOfCalcultion: indexOfCalculation)
     }
@@ -190,6 +201,8 @@ class CalculationViewController: UIViewController {
         // hide calculations for 4 sec
         calculationIndicationLabel.isHidden = true
         fomulaLabel.isHidden = true
+        fomulaResultLabel.isHidden = true
+        exponentLabel.isHidden = true
         
         // disable buttons for 4 sec
         disAbleAllOperators()
@@ -238,6 +251,11 @@ class CalculationViewController: UIViewController {
             countDownLabel.isHidden = true
             calculationIndicationLabel.isHidden = false
             fomulaLabel.isHidden = false
+            fomulaResultLabel.isHidden = false
+            
+            if levelChosen == Game.Level.dieHard {
+                exponentLabel.isHidden = false
+            }
             
             // allow user tap on the buttons according to game level
             setUpOperators(gameLevel: levelChosen!)
@@ -252,7 +270,7 @@ class CalculationViewController: UIViewController {
             toggleOperatorButtons(indexesOfOperators: [0, 1], isEnabled: true, isHidden: false)
         case .normal:
             toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3], isEnabled: true, isHidden: false)
-        case .hard:
+        case .hard, .dieHard:
             toggleOperatorButtons(indexesOfOperators: [0, 1, 2, 3, 4], isEnabled: true, isHidden:false)
         }
     }

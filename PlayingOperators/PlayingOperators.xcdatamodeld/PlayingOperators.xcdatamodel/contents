@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Calculation" representedClassName="Calculation" syncable="YES" codeGenerationType="category">
         <attribute name="lhs" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="pow" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="powNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="result" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="rhs" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="user_answer" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -17,7 +17,7 @@
         <relationship name="calculations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Calculation" inverseName="game" inverseEntity="Calculation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Calculation" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Calculation" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="Game" positionX="214" positionY="-3" width="128" height="118"/>
     </elements>
 </model>

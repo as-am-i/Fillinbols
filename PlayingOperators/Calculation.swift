@@ -22,6 +22,8 @@ class Calculation: NSManagedObject {
     
     let allOperatorTypes = [OperatorType.addition, OperatorType.substraction, OperatorType.multiplication, OperatorType.division, OperatorType.modulus]
     
+    var powImplemented = false
+    
     // fomula
 //    private var lhs = 0
 //    private var rhs = 0
@@ -37,8 +39,20 @@ class Calculation: NSManagedObject {
         (self.lhs, self.rhs, self.result) = createNewFomula(level: gameLevel)
     }
     
-    func getFormula() -> String {
-        return "\(self.lhs) ❓ \(self.rhs) = \(self.result)"
+    func getFormula(level: Game.Level) -> String {
+        var fomula = "\(self.lhs) ❓ \(self.rhs)"
+        if level == .dieHard {
+            fomula = "( \(self.lhs) ❓ \(self.rhs) )"
+        }
+        return fomula
+    }
+    
+    func getFomulaResult() -> String {
+        return " = \(self.result)"
+    }
+    
+    func getFomulaExponent() -> String {
+        return "\(self.powNum)"
     }
     
     func calculate(operatorType: OperatorType, num1 :Int, num2: Int) -> Int {
@@ -56,6 +70,13 @@ class Calculation: NSManagedObject {
         case .modulus:
             result = num1 % num2
         }
+        
+        if powImplemented {
+            let decimalResult = pow(Decimal(result), Int(powNum))
+            // casting Decimal to Int
+            result = Int(truncating: NSDecimalNumber(decimal: decimalResult))
+        }
+        
         return result
     }
     
@@ -66,6 +87,7 @@ class Calculation: NSManagedObject {
         var result : Int
         
         var range = 4
+//        var factorialImplemented = false
         
         switch level {
         case .easy:
@@ -74,6 +96,8 @@ class Calculation: NSManagedObject {
             range = 4
         case .hard:
             range = 5
+        case .dieHard:
+            powImplemented = true
         }
 
         let index = Int(arc4random_uniform(UInt32(range)))
@@ -94,12 +118,23 @@ class Calculation: NSManagedObject {
             result = calculate(operatorType: operatorType, num1: n1, num2: n2)
         }
         
+        if powImplemented {
+            let exponent = Int(arc4random_uniform(UInt32(5)))
+            let decimalResult = pow(Decimal(result), exponent)
+            
+            // casting Decimal to Int
+            result = Int(truncating: NSDecimalNumber(decimal: decimalResult))
+            
+            // store with core data
+            powNum = Int32(exponent)
+        }
+        
         return (Int32(n1), Int32(n2), Int64(result))
     }
     
     func checkAnswerIsCorrect(choice: OperatorType) {
         isCorrect = false
-        if rhs != 0 {
+        if Int(rhs) != 0 {
             if result == calculate(operatorType: choice, num1: Int(lhs), num2: Int(rhs)) {
                 isCorrect = true
             }

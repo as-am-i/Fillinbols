@@ -24,6 +24,7 @@ class Game: NSManagedObject {
         case easy = "EASY"
         case normal = "NORMAL"
         case hard = "HARD"
+        case dieHard = "DIE HARD"
     }
     
 //    init(gameLevel: Level) {

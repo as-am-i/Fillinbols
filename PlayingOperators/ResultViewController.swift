@@ -47,6 +47,13 @@ class ResultViewController: UIViewController {
                 destination.game = game
                 destination.managedObjectContext = managedObjectContext
             }
+        } else if segue.identifier == "toLevelChoice" {
+            if let navController = segue.destination as? UINavigationController {
+                let navViewControllers = navController.viewControllers // navViewControllers == array of all the viewControllers
+                if let destination = navViewControllers.first as? LevelChoiceViewController {
+                    destination.managedObjectContext = managedObjectContext
+                }
+            }
         }
     }
 }

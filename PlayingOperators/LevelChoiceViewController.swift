@@ -17,7 +17,7 @@ class LevelChoiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        print(pow(10, 2))
         // Do any additional setup after loading the view.
     }
     
@@ -44,6 +44,8 @@ class LevelChoiceViewController: UIViewController {
             levelChosen = Game.Level.normal
         case "HARD":
             levelChosen = Game.Level.hard
+        case "DIE HARD":
+            levelChosen = Game.Level.dieHard
         default:
             levelChosen = Game.Level.normal
         }
