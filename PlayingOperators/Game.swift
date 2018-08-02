@@ -27,6 +27,8 @@ class Game: NSManagedObject {
         case dieHard = "DIE HARD"
     }
     
+    static let allLevels = [Level.easy, Level.normal, Level.hard, Level.dieHard]
+    
 //    init(gameLevel: Level) {
 //        scoreCount = 0
 //        isFinished = false

@@ -42,9 +42,6 @@ class ResultViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRankView" {
             if let destination = segue.destination as? RankViewController {
-                destination.finalScore = finalScore
-                destination.level = level
-                destination.game = game
                 destination.managedObjectContext = managedObjectContext
             }
         } else if segue.identifier == "toLevelChoice" {

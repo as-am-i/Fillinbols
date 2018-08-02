@@ -32,6 +32,10 @@ class LevelChoiceViewController: UIViewController {
                 destination.levelChosen = levelChosen!
                 destination.managedObjectContext = managedObjectContext
             }
+        } else if segue.identifier == "toRankView" {
+            if let destination = segue.destination as? RankViewController {
+                destination.managedObjectContext = managedObjectContext
+            }
         }
     }
     

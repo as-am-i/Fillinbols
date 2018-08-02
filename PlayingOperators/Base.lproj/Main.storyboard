@@ -87,17 +87,35 @@
                                     <action selector="callSegue:" destination="Nk7-PL-rHi" eventType="touchUpInside" id="LSU-IK-W1u"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAx-pG-yOk">
+                                <rect key="frame" x="299" y="507" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LSy-Yf-8pR"/>
+                                    <constraint firstAttribute="width" constant="40" id="Wcx-RF-Jri"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="pDb-zG-vPk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="r0n-pO-LUw"/>
+                                </constraints>
+                                <state key="normal" title="RANK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="callSegue:" destination="vqt-Se-zwJ" eventType="touchDown" id="J3K-FQ-62T"/>
+                                    <segue destination="0vV-uh-Bnp" kind="show" identifier="toRankView" id="q1r-DO-gg7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47843137254901963" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6O1-zY-WOF" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="46g-RC-tMn"/>
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="5pH-ic-NK1"/>
+                            <constraint firstItem="VMp-2O-mCf" firstAttribute="bottom" secondItem="LAx-pG-yOk" secondAttribute="bottom" constant="130" id="BwN-ee-M7C"/>
                             <constraint firstItem="Skb-z4-jVd" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="IAJ-Vg-cuQ"/>
                             <constraint firstItem="4a4-9C-wu4" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="Q8E-Zz-P5a"/>
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="centerY" secondItem="cui-ra-1xY" secondAttribute="centerY" id="QdQ-iT-hLH"/>
                             <constraint firstItem="Skb-z4-jVd" firstAttribute="top" secondItem="6O1-zY-WOF" secondAttribute="bottom" constant="40" id="SLx-Bg-4mu"/>
                             <constraint firstItem="VMp-2O-mCf" firstAttribute="bottom" secondItem="PLM-gB-utj" secondAttribute="bottom" constant="8" id="UXl-DZ-kYv"/>
                             <constraint firstItem="6O1-zY-WOF" firstAttribute="top" secondItem="A75-HZ-Sp8" secondAttribute="bottom" constant="40" id="W4H-P6-Msj"/>
+                            <constraint firstItem="VMp-2O-mCf" firstAttribute="trailing" secondItem="LAx-pG-yOk" secondAttribute="trailing" constant="36" id="ixW-pW-UtP"/>
                             <constraint firstItem="A75-HZ-Sp8" firstAttribute="top" secondItem="4a4-9C-wu4" secondAttribute="bottom" constant="40" id="oDf-qC-d5a"/>
                             <constraint firstItem="PLM-gB-utj" firstAttribute="centerX" secondItem="cui-ra-1xY" secondAttribute="centerX" id="tfb-F8-jXc"/>
                         </constraints>
@@ -452,16 +470,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQH-uf-ac3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xQH-uf-ac3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="7nj-P0-Lyd"/>
                                     <constraint firstAttribute="height" constant="667" id="KZL-hf-9WM"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankCell" id="UrH-tO-TND" customClass="RankTableViewCell" customModule="PlayingOperators" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UrH-tO-TND" id="IO9-Xg-Clc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -585,5 +603,8 @@
             <point key="canvasLocation" x="-570" y="788"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="q1r-DO-gg7"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
