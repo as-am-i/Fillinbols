@@ -62,9 +62,9 @@ class Game: NSManagedObject {
         case .normal:
             self.calc_time = 5
         case .hard:
-            self.calc_time = 8
+            self.calc_time = 7
         case .dieHard:
-            self.calc_time = 10
+            self.calc_time = 8
         }
     }
     

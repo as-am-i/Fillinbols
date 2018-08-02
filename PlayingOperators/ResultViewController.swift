@@ -26,11 +26,39 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         showFinalScore()
+        showInputDialog()
     }
     
     private func showFinalScore() {
         finalScoreLabel.text = "\(finalScore)"
         levelLabel.text = "Level: \(level)"
+    }
+    
+    private func showInputDialog() {
+        // create an alert controller
+        let alertController = UIAlertController(title: "Got a high score!", message: "Enter your name.\n('John Smith' would be used as a default name if no name provided.)", preferredStyle: .alert)
+        
+        // create actions: confirm and cancel
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+            
+            let textField = alertController.textFields![0].text
+            if (!(textField!.isEmpty)) {
+                self.game.name = textField
+            } else {
+                self.game.name = "John Smith"
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        // placeholder
+        alertController.addTextField {(textField) in textField.placeholder = "Enter Name"}
+        
+        // add actions
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        // present the dialog
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK: Segue

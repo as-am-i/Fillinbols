@@ -23,6 +23,7 @@ class Calculation: NSManagedObject {
     let allOperatorTypes = [OperatorType.addition, OperatorType.substraction, OperatorType.multiplication, OperatorType.division, OperatorType.modulus]
     
     var powImplemented = false
+    var powAlreadyCalculated = false
     
     // fomula
 //    private var lhs = 0
@@ -71,7 +72,7 @@ class Calculation: NSManagedObject {
             result = num1 % num2
         }
         
-        if powImplemented {
+        if powAlreadyCalculated {
             let decimalResult = pow(Decimal(result), Int(powNum))
             // casting Decimal to Int
             result = Int(truncating: NSDecimalNumber(decimal: decimalResult))
@@ -119,14 +120,13 @@ class Calculation: NSManagedObject {
         }
         
         if powImplemented {
-            let exponent = Int(arc4random_uniform(UInt32(5)))
+            let exponent = Int(arc4random_uniform(8)+2)
             let decimalResult = pow(Decimal(result), exponent)
-            
-            // casting Decimal to Int
-            result = Int(truncating: NSDecimalNumber(decimal: decimalResult))
-            
+            result = Int(truncating: NSDecimalNumber(decimal: decimalResult))  // casting Decimal to Int
+
             // store with core data
             powNum = Int32(exponent)
+            powAlreadyCalculated = true
         }
         
         return (Int32(n1), Int32(n2), Int64(result))
