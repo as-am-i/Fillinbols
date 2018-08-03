@@ -17,6 +17,7 @@ class ResultViewController: UIViewController {
     var game : Game!
     
     var managedObjectContext: NSManagedObjectContext!
+    var games = [Game]()
     
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var finalScoreLabel: UILabel!
@@ -26,12 +27,38 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         showFinalScore()
-        showInputDialog()
+//        showInputDialog()
+        askUserName()
     }
     
     private func showFinalScore() {
         finalScoreLabel.text = "\(finalScore)"
         levelLabel.text = "Level: \(level)"
+    }
+    
+    private func getAllResults() {
+        let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
+        let filter = game.level
+        fetchRequest.predicate = NSPredicate(format: "level = %@", filter!)
+        
+        let sort = NSSortDescriptor(key: #keyPath(Game.score), ascending: false)
+        fetchRequest.sortDescriptors = [sort]
+        
+        // only top 5
+        fetchRequest.fetchLimit = 5
+        do {
+            games = try managedObjectContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
+    private func askUserName() {
+        getAllResults()
+        
+        if games.count < 5 || game.score >= games[4].score {
+            showInputDialog()
+        }
     }
     
     private func showInputDialog() {
@@ -48,7 +75,7 @@ class ResultViewController: UIViewController {
                 self.game.name = "John Smith"
             }
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in self.game.name = "John Smith" }
         
         // placeholder
         alertController.addTextField {(textField) in textField.placeholder = "Enter Name"}
