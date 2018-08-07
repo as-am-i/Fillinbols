@@ -1,6 +1,6 @@
 # Fillinbols
 
-![fillinbols_test_movie_1 1](https://user-images.githubusercontent.com/32344980/41806452-3a340b4e-7673-11e8-8523-808a279e41c7.gif)
+![fillinbols_test_movie_2](https://user-images.githubusercontent.com/32344980/43804652-a5980f6e-9a51-11e8-99af-092b415f8181.gif)
 
 `Fillinbols` is a simple arithmetic calculation game for iOS.
 
