@@ -38,6 +38,7 @@ class Game: NSManagedObject {
     
     func setupGameProperties(gameLevel: Level) {
         self.score = 0
+        self.name = "John Smith"
         self.isFinished = false
         self.level = gameLevel.rawValue
         setUpCalulations(gamelevel: gameLevel)

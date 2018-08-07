@@ -25,7 +25,6 @@ class RankViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self // delegate is who is implementing the protocol
         tableView.dataSource = self
 
-        saveContext()
         loadAllResult()
     }
     
@@ -53,19 +52,21 @@ class RankViewController: UIViewController, UITableViewDelegate {
                 let result = try managedObjectContext.fetch(fetchRequest)
                 gameResults.append(result)
                 
+//                for game in gameResults {
+//                    for index in 0...game.count-1 {
+//                        if (game[index].isFinished == false) {
+//                            self.managedObjectContext.delete(game[index])
+//                        }
+//                    }
+//                }
+                
                 tableView.reloadData()
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
         }
-    }
-    
-    fileprivate func saveContext() {
-        do {
-            try managedObjectContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+        
+        
     }
     
 }

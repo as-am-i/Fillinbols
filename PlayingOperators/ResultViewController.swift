@@ -27,8 +27,10 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         showFinalScore()
-//        showInputDialog()
         askUserName()
+        if (game.isFinished == true) {
+            saveContext()
+        }
     }
     
     private func showFinalScore() {
@@ -58,12 +60,13 @@ class ResultViewController: UIViewController {
         
         if games.count < 5 || game.score >= games[4].score {
             showInputDialog()
+//            saveContext()
         }
     }
     
     private func showInputDialog() {
         // create an alert controller
-        let alertController = UIAlertController(title: "Got a high score!", message: "Enter your name.\n('John Smith' would be used as a default name if no name provided.)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Got a high score! Keep it in the rank!", message: "Enter your name.\n('John Smith' would be your name if no name provided.\nCancel if you don't need this game result)", preferredStyle: .alert)
         
         // create actions: confirm and cancel
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
@@ -74,8 +77,12 @@ class ResultViewController: UIViewController {
             } else {
                 self.game.name = "John Smith"
             }
+            self.saveContext()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in self.game.name = "John Smith" }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+//            self.game.name = "John Smith"
+            self.managedObjectContext.delete(self.game)
+        }
         
         // placeholder
         alertController.addTextField {(textField) in textField.placeholder = "Enter Name"}
@@ -106,6 +113,14 @@ class ResultViewController: UIViewController {
                     destination.managedObjectContext = managedObjectContext
                 }
             }
+        }
+    }
+    
+    fileprivate func saveContext() {
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
         }
     }
 }
