@@ -25,16 +25,7 @@ class Calculation: NSManagedObject {
     var powImplemented = false
     var powAlreadyCalculated = false
     
-    // fomula
-//    private var lhs = 0
-//    private var rhs = 0
-//    private var result = 0
-    
     var isCorrect = false
-    
-//    init(level: Game.Level) {
-//        (lhs, rhs, result) = createNewFomula(level: level)
-//    }
     
     func setupCalculationProperties(gameLevel: Game.Level) {
         (self.lhs, self.rhs, self.result) = createNewFomula(level: gameLevel)
@@ -88,7 +79,6 @@ class Calculation: NSManagedObject {
         var result : Int
         
         var range = 4
-//        var factorialImplemented = false
         
         switch level {
         case .easy:

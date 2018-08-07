@@ -14,12 +14,8 @@ class Game: NSManagedObject {
     
 //    var managedObjectContext: NSManagedObjectContext!
 //    No need to declare managedObjectContext in Game Model because the Model extends NSManagedObject (parent of NSManagedObjectContext)
-    
-//    private(set) var score = 0
-//    private var isFinished = false
-//    var level : Level!
     var calculationsArray = [Calculation]()
-//
+
     enum Level : String {
         case easy = "EASY"
         case normal = "NORMAL"
@@ -28,13 +24,6 @@ class Game: NSManagedObject {
     }
     
     static let allLevels = [Level.easy, Level.normal, Level.hard, Level.dieHard]
-    
-//    init(gameLevel: Level) {
-//        scoreCount = 0
-//        isFinished = false
-//        level = gameLevel
-//        setUpCalulations(withLevel: level)
-//    }
     
     func setupGameProperties(gameLevel: Level) {
         self.score = 0
@@ -47,7 +36,6 @@ class Game: NSManagedObject {
     
     func setUpCalulations(gamelevel: Level){
         for _ in 1...10 {
-//            let calculation = Calculation(level: gamelevel)
             let calculation = Calculation(context: managedObjectContext!)
             calculation.setupCalculationProperties(gameLevel: gamelevel)
             

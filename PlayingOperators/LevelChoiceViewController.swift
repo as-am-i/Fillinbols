@@ -17,8 +17,6 @@ class LevelChoiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(pow(10, 2))
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func callSegue(_ sender: UIButton) {

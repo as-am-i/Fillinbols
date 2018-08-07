@@ -17,10 +17,7 @@ class CalculationViewController: UIViewController {
     
     var levelChosen : Game.Level?
     
-//    lazy var game = Game(gameLevel: levelChosen!) // never forget "lazy"
     lazy var game = Game(context: managedObjectContext!)
-//    game.setupGameProperties(gameLevel: levelChosen)
-    
     
     private var indexOfCalculation = 0
     
@@ -122,7 +119,6 @@ class CalculationViewController: UIViewController {
         fomulaResultLabel.text = calc.getFomulaResult()
         
         if levelChosen == Game.Level.dieHard {
-//            exponentLabel.isHidden = false
             exponentLabel.text = calc.getFomulaExponent()
         }
         

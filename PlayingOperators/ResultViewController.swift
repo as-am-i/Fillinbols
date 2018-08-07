@@ -25,7 +25,6 @@ class ResultViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         showFinalScore()
         askUserName()
         if (game.isFinished == true) {
@@ -60,7 +59,6 @@ class ResultViewController: UIViewController {
         
         if games.count < 5 || game.score >= games[4].score {
             showInputDialog()
-//            saveContext()
         }
     }
     
@@ -77,10 +75,9 @@ class ResultViewController: UIViewController {
             } else {
                 self.game.name = "John Smith"
             }
-            self.saveContext()
+            self.saveContext() // save context immediately after naming
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-//            self.game.name = "John Smith"
             self.managedObjectContext.delete(self.game)
         }
         
