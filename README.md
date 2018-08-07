@@ -13,6 +13,24 @@
 * User will be asked for use name to display in the rank only when the score is in the top 5 of all the results (The results and user names are stored and shown only on his device. User can skip entering his name and default name will be saved if lazy). 
 * Ok, it's time to start a new game.
 
+## How it works
+* Calculation types
+    * EASY: 2 (addition / substraction)
+    * NORMAL: 4 (addition / substraction / multiplication / division)
+    * HARD: 5 (addition / substraction / multiplication / division /modulus)
+    * DIE HARD: 5 + ⍺ (addition /substraction / multiplication / division / modulus + always added power)
+* Calculation time per each calculation (seconds)
+    * EASY: 3
+    * NORMAL: 5
+    * HARD: 7
+    * DIE HARD: 8
+* Final Score
+    * Final score will be calculated as the sum of all the left time of the 10 calculations.
+* Rank
+    * Rank can be checked by user on the first interface or after games.
+    * Rank displays top 5 game results for 4 levels, with user name and the level besides the score.
+    * Input dialog shows up after game to let user enter his name when the score is above the 5th in the current rank.
+    * All the data are saved on ONLY user's local device. NOT online.
 
 ## Installation
 To play `Fillinbols`, clone the repository, open, the project in XCode, and click the run button.
