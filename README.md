@@ -1,7 +1,7 @@
 # Fillinbols
 
 ![fillinbols_test_movie_2](https://user-images.githubusercontent.com/32344980/43804652-a5980f6e-9a51-11e8-99af-092b415f8181.gif)
-![screenshot_1](/images/screenshot1 "level_chosen_interface")
+![screenshot_1](images/screenshot1 "level_chosen_interface")
 ![screenshot_2](/images/screenshot2 "calculation_intergace")
 ![screenshot_3](/images/screenshot3 "name_input_dialog_interface")
 ![screenshot_4](/images/screenshot4 "rank_interface")
