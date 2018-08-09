@@ -4,14 +4,10 @@
 
 
 ![screenshot_1](images/screenshot1.png "level_chosen_interface")
-
-
 ![screenshot_2](images/screenshot2.png "calculation_intergace")
 
 
 ![screenshot_3](images/screenshot3.png "name_input_dialog_interface")
-
-
 ![screenshot_4](images/screenshot4.png "rank_interface")
 
 `Fillinbols` is a simple arithmetic calculation game for iOS.
